@@ -6,4 +6,5 @@ const sumArray = (num: number[]): number => {
 const array: number[] = [10, 50];
 
 sumArray(array);
-console.log(sumArray(array));
+
+// console.log(sumArray(array));
