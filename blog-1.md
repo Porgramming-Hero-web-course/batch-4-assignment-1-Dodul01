@@ -2,9 +2,8 @@
 
 ## Union Type
 
-Union types are used when a value can be more then a single type. such as when a property would be <b>String</b> or <b>Number</b>. Using the <b>|</b> we can write an union type. 
-</br></br>
-Here is an example of Union Type:
+Union types allows a variable to hold values of multiple types. It's defined using type pipe (|) operator, sperading the possible types. For example , a variable can be defined :
+</br>
 
 <b>Example</b>:
 
@@ -16,14 +15,13 @@ let profileStatus : 'Acive' | 'Incative';
 profileStatus = "Acive"
 
 ```
-This is how we can write union type where we can add multiple type.
+Meaning it can store eather string or a number. Union types provide flexibility while maintaining type safety, ensuring that only the specified types are assigned. Typescript also allows nerrowing the type using conditions ensuring more precise handling of value.
 
 ## Intersection In TypeScript
-Intersection Combines multiple types into one. This allows to add together existing types to get a single type that has all the features.
-</br></br>
-Here is an example of Union Type:
+Intersection type in typescript combines multiple types into one. This allows you to create a new type that has all the Properties and methods form the combined types. The & operator is used to define intersection type. For example if you havea UserInfo type and a UserFinanceInfo type you can combine then into a User type using intersection.
+</br>
 
-<b>Example</b>:
+<b>Example: </b>:
 
 ```typescript
 type UserInfo = {
@@ -50,3 +48,6 @@ const user: User = {
     balance: 5000,
     transaction_history: ['txn1', 'txn2', 'txn3']
 }
+```
+
+This new User type will contain all the properties of both UserInfo and UserFinanceInfo, ensuring the result type has all the features of the original type combined, Including Id, user_name, age, email, account_id, balance and transiction_history.
