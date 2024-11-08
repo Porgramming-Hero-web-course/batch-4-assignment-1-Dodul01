@@ -1,11 +1,11 @@
 const countWordOccurrences = (sentence: string, word: string): number => {
-    const wordArray: string[] = sentence.split(' ');
+    const wordArray: string[] = sentence.split(/[\s,.-]+/);
     const matchWord: string[] = [];
 
     for (let i: number = 0; i < wordArray.length; i++) {
         const currentWord: string = wordArray[i].toLowerCase();
 
-        if (currentWord.includes(word.toLowerCase())) {
+        if (currentWord === word.toLocaleLowerCase()) {
             matchWord.push(currentWord);
         }
     }
@@ -14,4 +14,6 @@ const countWordOccurrences = (sentence: string, word: string): number => {
     return matchWord.length;
 }
 
-// console.log(countWordOccurrences("As a developer, I am constantly developing my skills in development.", "develop")); //3
+// console.log(countWordOccurrences("I love typescript", "typescript"));
+// console.log(countWordOccurrences("Bangladesh is a great county.", "bangladesh")); 
+
